@@ -1,12 +1,12 @@
 function [Y,X] = znajdzLinie (Obraz,StY,StX)
-OG = [1,length(Obraz)];%Ograniczeie rozmiaru,parametr miał znaczenie gdy 
-                        %w obrazie były dodatkowe informacje
+OG = [1,length(Obraz)];%Ograniczeie obszaru w jakim szukane są styczne punkty
+
 X(1) = StX;
 Y(1) = StY;
 NX (1) = StX;
 NY (1) = StY;
 kontynuowac = true;
-
+dopuszczalnaPrzerwaY = 8;
 while (kontynuowac)
     kontynuowac = false;
     
@@ -19,10 +19,9 @@ while (kontynuowac)
         StY = NY(h);
         
         for i=-1:1
-            for j=-1:1
-                if (Obraz(StX-i,StY-j) == 1)
-                    if ((OG(1)<(StY-j)) && ((StY-j) <OG(2)))
-                        
+            for j=-dopuszczalnaPrzerwaY:dopuszczalnaPrzerwaY
+                if ((OG(1)<(StY-j)) && ((StY-j) <OG(2))&& (OG(1)<(StY-j)) && ((StY-j) <OG(2)))
+                    if (Obraz(StX-i,StY-j) == 1) 
                         if (czyJuzZnaleziony (X,Y, StX-i,StY-j) == false)
                             X(length(X)+1) = StX-i;
                             Y(length(Y)+1) = StY-j;
