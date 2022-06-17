@@ -29,13 +29,13 @@ for i=2:iloscKlatek
 %            if (i >16) 
 %      
 %   
-        figure ()
-        imshow(BW1);
-        hold on
- 
-        plot (A{1,i},A{2,i},'sb');
-        plot (B{1,i},B{2,i},'sr');
-        hold off
+%         figure ()
+%         imshow(BW1);
+%         hold on
+%  
+%         plot (A{1,i},A{2,i},'sb');
+%         plot (B{1,i},B{2,i},'sr');
+%         hold off
 %          end
    else
        %wskaż punkty ręcznie
