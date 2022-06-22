@@ -25,18 +25,15 @@ for i=2:iloscKlatek
        %znajdz krawedzie automatycznie
         [A{1,i},A{2,i}] = znajdzLinie (BW1,YA, XA);
         [B{1,i},B{2,i}] = znajdzLinie (BW1,YB, XB);
-       
-%            if (i >16) 
-%      
-%   
+
+%       Rysuje wynik analizy  
 %         figure ()
-%         imshow(BW1);
+%         imshow(I);
 %         hold on
 %  
 %         plot (A{1,i},A{2,i},'sb');
 %         plot (B{1,i},B{2,i},'sr');
 %         hold off
-%          end
    else
        %wskaż punkty ręcznie
        [YA,XA,YB,XB] = wskazSrednice(Dane(:,:,i));
